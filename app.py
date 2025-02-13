@@ -271,10 +271,8 @@ with col3:
         <b><b>📌 Program Details</b></b>
     </div>
 """, unsafe_allow_html=True)
-    
-    import streamlit as st
 
-st.markdown("""
+    st.markdown("""
     <style>
         .benefit-list {
             list-style-type: none;
@@ -317,9 +315,6 @@ st.markdown("""
         </div>
     </div>
 """, unsafe_allow_html=True)
-
-
-
 
 # Footer
 st.markdown(f"""
