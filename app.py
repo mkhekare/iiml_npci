@@ -297,7 +297,7 @@ st.markdown("""
             margin-bottom: 10px;
         }
     </style>
-    
+
     <div class="box-container">
         <div class="title">🚀 Accelerated Rewards</div>
         <ul class="benefit-list">
@@ -305,17 +305,13 @@ st.markdown("""
             <li class="benefit-item">🍽️ <b>3x points</b> - Fine Dining</li>
             <li class="benefit-item">✈️ <b>4x points</b> - Travel</li>
         </ul>
-    </div>
 
-    <div class="box-container">
         <div class="title">🎁 Redemption Options</div>
         <ul class="benefit-list">
             <li class="benefit-item">🎀 Luxury Merchandise</li>
             <li class="benefit-item">🌟 Travel Benefits</li>
             <li class="benefit-item">🎪 Experiential Rewards</li>
         </ul>
-    </div>
-""", unsafe_allow_html=True)
 
 
 # Footer
