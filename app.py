@@ -32,7 +32,7 @@ st.markdown("""
             background-color: #FFFFFF; /* White background for content boxes */
             padding: 1.5rem;
             border-radius: 12px;
-            color: #333333; /* Dark text for content */
+            color: #000000; /* Changed to black text for better visibility */
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow for content boxes */
         }
         .sidebar .css-1aumxhk, .sidebar .css-18e3th9 {
@@ -46,7 +46,6 @@ st.markdown("""
         }
     </style>
 """, unsafe_allow_html=True)
-
 
 st.title("💎 RuPay Luxe Rewards Program")
 st.subheader("Experience luxury, exclusivity, and unparalleled rewards.")
