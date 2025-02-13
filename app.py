@@ -192,7 +192,7 @@ col1, col2, col3 = st.columns([1, 1.2, 1])
 with col1:
     st.markdown("""
     <div class="box-container">
-        <b>🧑‍💼 User Profile</b> | <b>💰 Eligibility Calculator</b> | <b>📌 Program Details</b>
+        <b>🧑‍💼 User Profile</b>
     </div>
 """, unsafe_allow_html=True)
     
@@ -205,8 +205,11 @@ with col1:
 
 # Column 2: Eligibility Calculator
 with col2:
-    st.markdown('<div class="section-box">', unsafe_allow_html=True)
-    st.markdown('<div class="section-title">💰 Eligibility Calculator</div>', unsafe_allow_html=True)
+    st.markdown("""
+    <div class="box-container">
+        <b><b>💰 Eligibility Calculator</b></b>
+    </div>
+""", unsafe_allow_html=True)
     
     annual_spending = st.number_input("Annual Spending (₹)", 0, 5000000, 100000, 50000)
 
@@ -263,8 +266,11 @@ with col2:
     st.markdown('</div>', unsafe_allow_html=True)
 
 with col3:
-    st.markdown('<div class="section-box">', unsafe_allow_html=True)
-    st.markdown('<div class="section-title">📌 Program Details</div>', unsafe_allow_html=True)
+    st.markdown("""
+    <div class="box-container">
+        <b><b>📌 Program Details</b></b>
+    </div>
+""", unsafe_allow_html=True)
     
     st.markdown("""
     <style>
