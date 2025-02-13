@@ -300,20 +300,21 @@ with col3:
     </style>
 
     <div class="box-container">
-        <div class="section-title">🚀 Accelerated Rewards</div>
-        <div class="benefit-list">
-            <div class="benefit-item">🛍️ 5x points - Luxury Retail</div>
-            <div class="benefit-item">🍽️ 3x points - Fine Dining</div>
-            <div class="benefit-item">✈️ 4x points - Travel</div>
-    
-
-        <div class="section-title">🎁 Redemption Options</div>
-        <div class="benefit-list">
-            <div class="benefit-item">🎀 Luxury Merchandise</div>
-            <div class="benefit-item">🌟 Travel Benefits</div>
-            <div class="benefit-item">🎪 Experiential Rewards</div>
-        </div>
+    <div class="section-title">🚀 Accelerated Rewards</div>
+    <div class="benefit-list">
+        <div class="benefit-item">🛍️ 5x points - Luxury Retail</div>
+        <div class="benefit-item">🍽️ 3x points - Fine Dining</div>
+        <div class="benefit-item">✈️ 4x points - Travel</div>
     </div>
+
+    <div class="section-title">🎁 Redemption Options</div>
+    <div class="benefit-list">
+        <div class="benefit-item">🎀 Luxury Merchandise</div>
+        <div class="benefit-item">🌟 Travel Benefits</div>
+        <div class="benefit-item">🎪 Experiential Rewards</div>
+    </div>
+</div>
+
 """, unsafe_allow_html=True)
 
 
