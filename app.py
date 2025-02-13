@@ -191,7 +191,7 @@ col1, col2, col3 = st.columns([1, 1.2, 1])
 # Column 1: User Profile
 with col1:
     st.markdown("""
-    <div style="text-align: center;" class="box-container">
+    <div class="box-container">
         <b>🧑‍💼 User Profile</b>
     </div>
 """, unsafe_allow_html=True)
@@ -206,7 +206,7 @@ with col1:
 # Column 2: Eligibility Calculator
 with col2:
     st.markdown("""
-    <div style="text-align: center;" class="box-container">
+    <div class="box-container">
         <b><b>💰 Eligibility Calculator</b></b>
     </div>
 """, unsafe_allow_html=True)
@@ -267,22 +267,13 @@ with col2:
 
 with col3:
     st.markdown("""
-    <div style="text-align: center;" class="box-container">
+    <div class="box-container">
         <b><b>📌 Program Details</b></b>
     </div>
 """, unsafe_allow_html=True)
-
-# Apply custom styles and fix alignment
-st.markdown("""
+    
+    st.markdown("""
     <style>
-        .box-container {
-            border: 2px solid #ddd;
-            padding: 15px;
-            border-radius: 10px;
-            background-color: #f9f9f9;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-        }
         .benefit-list {
             list-style-type: none;
             padding-left: 0;
@@ -291,28 +282,31 @@ st.markdown("""
             font-size: 18px;
             margin-bottom: 5px;
         }
-        .title {
-            font-size: 20px;
-            font-weight: bold;
-            margin-bottom: 10px;
+        .box-container {
+            border: 2px solid #ddd;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
         }
     </style>
 
     <div class="box-container">
-        <div class="title">🚀 Accelerated Rewards</div>
+        <b>🚀 Accelerated Rewards</b>
         <ul class="benefit-list">
-            <li class="benefit-item">🛍️ <b>5x points</b> - Luxury Retail</li>
-            <li class="benefit-item">🍽️ <b>3x points</b> - Fine Dining</li>
-            <li class="benefit-item">✈️ <b>4x points</b> - Travel</li>
+            <li class="benefit-item">🛍️ 5x points - Luxury Retail</li>
+            <li class="benefit-item">🍽️ 3x points - Fine Dining</li>
+            <li class="benefit-item">✈️ 4x points - Travel</li>
         </ul>
 
-        <div class="title">🎁 Redemption Options</div>
+        <b>🎁 Redemption Options</b>
         <ul class="benefit-list">
             <li class="benefit-item">🎀 Luxury Merchandise</li>
             <li class="benefit-item">🌟 Travel Benefits</li>
             <li class="benefit-item">🎪 Experiential Rewards</li>
         </ul>
-
+    </div>
+""", unsafe_allow_html=True)
 
 # Footer
 st.markdown(f"""
