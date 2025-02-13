@@ -272,49 +272,49 @@ with col3:
     </div>
 """, unsafe_allow_html=True)
 
-    st.markdown("""
+# Fix styling and structure
+st.markdown("""
     <style>
-        .benefit-list {
-            list-style-type: none;
-            padding-left: 0;
-            margin: 0;
-        }
-        .benefit-item {
-            font-size: 18px;
-            margin-bottom: 5px;
-        }
         .box-container {
             border: 2px solid #ddd;
             padding: 15px;
             border-radius: 10px;
             background-color: #f9f9f9;
             box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
-            text-align: center; /* Center align text */
+            margin-bottom: 20px;
         }
-        .section-title {
+        .benefit-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .benefit-item {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        .title {
             font-size: 20px;
-            margin-top: 15px;
-            margin-bottom: 10px;
             font-weight: bold;
+            margin-bottom: 10px;
         }
     </style>
 
     <div class="box-container">
-        <div class="section-title">🚀 Accelerated Rewards</div>
-        <div class="benefit-list">
-            <div class="benefit-item">🛍️ 5x points - Luxury Retail</div>
-            <div class="benefit-item">🍽️ 3x points - Fine Dining</div>
-            <div class="benefit-item">✈️ 4x points - Travel</div>
-        </div>
+        <div class="title">🚀 Accelerated Rewards</div>
+        <ul class="benefit-list">
+            <li class="benefit-item">🛍️ <b>5x points</b> - Luxury Retail</li>
+            <li class="benefit-item">🍽️ <b>3x points</b> - Fine Dining</li>
+            <li class="benefit-item">✈️ <b>4x points</b> - Travel</li>
+        </ul>
 
-        <div class="section-title">🎁 Redemption Options</div>
-        <div class="benefit-list">
-            <div class="benefit-item">🎀 Luxury Merchandise</div>
-            <div class="benefit-item">🌟 Travel Benefits</div>
-            <div class="benefit-item">🎪 Experiential Rewards</div>
-        </div>
+        <div class="title">🎁 Redemption Options</div>
+        <ul class="benefit-list">
+            <li class="benefit-item">🎀 Luxury Merchandise</li>
+            <li class="benefit-item">🌟 Travel Benefits</li>
+            <li class="benefit-item">🎪 Experiential Rewards</li>
+        </ul>
     </div>
 """, unsafe_allow_html=True)
+
 
 # Footer
 st.markdown(f"""
