@@ -317,8 +317,6 @@ with col3:
 """, unsafe_allow_html=True)
 
 
-
-
 # Footer
 st.markdown(f"""
     <div class="footer">
