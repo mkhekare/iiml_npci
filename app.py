@@ -187,10 +187,14 @@ st.markdown('<div class="title-container"><h1 class="title">💎 RuPay Luxe Rewa
 # Create three columns for layout
 col1, col2, col3 = st.columns([1, 1.2, 1])
 
+
 # Column 1: User Profile
 with col1:
-    st.markdown('<div class="section-box">', unsafe_allow_html=True)
-    st.markdown('<div class="section-title">🧑‍💼 User Profile</div>', unsafe_allow_html=True)
+    st.markdown("""
+    <div class="box-container">
+        <b>🧑‍💼 User Profile</b> | <b>💰 Eligibility Calculator</b> | <b>📌 Program Details</b>
+    </div>
+""", unsafe_allow_html=True)
     
     existing_user = st.radio("Existing RuPay Cardholder?", ["Yes", "No"], horizontal=True)
     cibil_score = st.slider("CIBIL Score", 300, 900, 750, 50)
@@ -263,31 +267,40 @@ with col3:
     st.markdown('<div class="section-title">📌 Program Details</div>', unsafe_allow_html=True)
     
     st.markdown("""
-        <div style="font-size: 14px;">
-            <b>🎯 Core Benefits</b>
-            <ul class="benefit-list">
-                <li class="benefit-item">💫 Personalized Rewards</li>
-                <li class="benefit-item">🎭 Exclusive Access</li>
-                <li class="benefit-item">⭐ High Reward Rates</li>
-            </ul>
-            
-            <b>🚀 Accelerated Rewards</b>
-            <ul class="benefit-list">
-                <li class="benefit-item">🛍️ 5x points - Luxury Retail</li>
-                <li class="benefit-item">🍽️ 3x points - Fine Dining</li>
-                <li class="benefit-item">✈️ 4x points - Travel</li>
-            </ul>
-            
-            <b>🎁 Redemption Options</b>
-            <ul class="benefit-list">
-                <li class="benefit-item">🎀 Luxury Merchandise</li>
-                <li class="benefit-item">🌟 Travel Benefits</li>
-                <li class="benefit-item">🎪 Experiential Rewards</li>
-            </ul>
-        </div>
-    """, unsafe_allow_html=True)
-    st.markdown('</div>', unsafe_allow_html=True)
+    <style>
+        .benefit-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .benefit-item {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        .box-container {
+            border: 2px solid #ddd;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+        }
+    </style>
 
+    <div class="box-container">
+        <b>🚀 Accelerated Rewards</b>
+        <ul class="benefit-list">
+            <li class="benefit-item">🛍️ 5x points - Luxury Retail</li>
+            <li class="benefit-item">🍽️ 3x points - Fine Dining</li>
+            <li class="benefit-item">✈️ 4x points - Travel</li>
+        </ul>
+
+        <b>🎁 Redemption Options</b>
+        <ul class="benefit-list">
+            <li class="benefit-item">🎀 Luxury Merchandise</li>
+            <li class="benefit-item">🌟 Travel Benefits</li>
+            <li class="benefit-item">🎪 Experiential Rewards</li>
+        </ul>
+    </div>
+""", unsafe_allow_html=True)
 
 # Footer
 st.markdown(f"""
