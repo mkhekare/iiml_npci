@@ -13,38 +13,27 @@ tiers = [
 df = pd.DataFrame(tiers)
 
 # Streamlit App Header
-# Streamlit App Header
 st.markdown("""
     <style>
         body {
-            background-color: #0A0A0A; /* Darker background for elegance */
-            color: #EAEAEA; /* Soft light color for contrast */
-            font-family: 'Georgia', serif; /* Elegant font choice */
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Arial', sans-serif;
         }
         .stApp {
-            max-width: 1200px; /* Slightly wider for spacious feel */
+            max-width: 1100px;
             margin: auto;
-            padding: 3rem; /* Increased padding for luxury feel */
-            border-radius: 20px; /* More rounded corners */
-            background: linear-gradient(145deg, #2C2C2C, #4B4B4B); /* Softer gradient */
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+            padding: 2rem;
+            border-radius: 12px;
+            background: linear-gradient(145deg, #2C2C2C, #3D3D3D);
         }
         .sidebar {
-            background-color: #1C1C1C; /* Slightly lighter sidebar */
-            padding: 2rem; /* More padding for a luxurious look */
-            border-radius: 20px; /* Rounded corners */
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Shadow for depth */
-        }
-        h1, h2, h3 {
-            font-family: 'Times New Roman', serif; /* Elegant header font */
-            font-weight: bold; /* Bold headers for emphasis */
-        }
-        p {
-            line-height: 1.6; /* Improved readability */
+            background-color: #1E1E1E;
+            padding: 1rem;
+            border-radius: 12px;
         }
     </style>
 """, unsafe_allow_html=True)
-
 
 st.title("💎 RuPay Luxe Rewards Program")
 st.subheader("Experience luxury, exclusivity, and unparalleled rewards.")
@@ -75,9 +64,20 @@ if not eligible_cards.empty:
 else:
     st.warning("⚠️ No cards available for your spending level or credit profile.")
 
-# Layout with Rewards Model on one side
-col1, col2 = st.columns([1, 1])
+# Layouting Sections
+col1, col2, col3 = st.columns([1, 1, 1])
+
 with col1:
+    st.subheader("🔹 Loyalty & Rewards Model")
+    st.write("RuPay Luxe Rewards is designed to attract and retain affluent customers by offering unparalleled benefits and experiences.")
+    
+    st.subheader("📌 Key Features of RuPay Luxe Rewards")
+    st.write("- **Personalized Rewards**: Tailored to individual spending habits and preferences.")
+    st.write("- **Exclusive Access**: VIP events, luxury travel perks, and bespoke services.")
+    st.write("- **High Reward Rates**: Accelerated points on premium spending categories.")
+    st.write("- **Global Benefits**: Internationally recognized rewards and benefits.")
+
+with col2:
     st.subheader("🚀 Accelerated Rewards on Premium Categories")
     st.write("- **Luxury Retail**: 5x points at partner luxury brands 🛍️")
     st.write("- **Fine Dining**: 3x points at gourmet restaurants 🍽️")
@@ -88,28 +88,19 @@ with col1:
     st.write("- **Travel Benefits**: Use points for flight upgrades, hotel stays, and vacation packages 🏝️")
     st.write("- **Experiential Rewards**: Private concerts, art exhibitions, and gourmet cooking classes 🎨🎶")
 
-with col2:
-    st.subheader("🔹 Loyalty & Rewards Model")
-    st.write("RuPay Luxe Rewards is designed to attract and retain affluent customers by offering unparalleled benefits and experiences.")
-    
-    st.subheader("📌 Key Features of RuPay Luxe Rewards")
-    st.write("- **Personalized Rewards**: Tailored to individual spending habits and preferences.")
-    st.write("- **Exclusive Access**: VIP events, luxury travel perks, and bespoke services.")
-    st.write("- **High Reward Rates**: Accelerated points on premium spending categories.")
-    st.write("- **Global Benefits**: Internationally recognized rewards and benefits.")
+with col3:
+    st.subheader("🤝 Strategic Partnerships")
+    st.write("- **Luxury Brand Collaborations**: Partnering with high-end brands for exclusive access and benefits.")
+    st.write("- **Travel & Hospitality Alliances**: Premium airline and luxury hotel benefits.")
+    st.write("- **Fine Dining Partnerships**: Michelin-starred dining experiences.")
 
-st.subheader("🤝 Strategic Partnerships")
-st.write("- **Luxury Brand Collaborations**: Partnering with high-end brands for exclusive access and benefits.")
-st.write("- **Travel & Hospitality Alliances**: Premium airline and luxury hotel benefits.")
-st.write("- **Fine Dining Partnerships**: Michelin-starred dining experiences.")
+    st.subheader("📡 AI-Driven Personalized Engagement")
+    st.write("- **Behavioral Analysis**: AI-driven insights for customized offers.")
+    st.write("- **Exclusive Digital Platform**: 24/7 concierge services and real-time notifications.")
 
-st.subheader("📡 AI-Driven Personalized Engagement")
-st.write("- **Behavioral Analysis**: AI-driven insights for customized offers.")
-st.write("- **Exclusive Digital Platform**: 24/7 concierge services and real-time notifications.")
-
-st.subheader("📊 Monitoring & Feedback Mechanism")
-st.write("- **Customer Surveys**: Regular insights on satisfaction and improvements.")
-st.write("- **Performance Metrics**: Tracking engagement and retention KPIs.")
+    st.subheader("📊 Monitoring & Feedback Mechanism")
+    st.write("- **Customer Surveys**: Regular insights on satisfaction and improvements.")
+    st.write("- **Performance Metrics**: Tracking engagement and retention KPIs.")
 
 # Footer
 st.caption("Designed for the elite. Elevate your lifestyle with RuPay Luxe Rewards.")
