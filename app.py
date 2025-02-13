@@ -2,126 +2,186 @@ import streamlit as st
 import pandas as pd
 from datetime import datetime
 
-# Define card tiers data
+# Define card tiers data with enhanced benefits
 tiers = [
     {
         "Tier": "Luxe Silver",
         "Eligibility": 500000,
         "Points": 1.5,
         "Lounge Access": "4 domestic visits/year",
-        "Benefits": "Birthday month bonus: 2x points on all spends",
+        "Benefits": "2x birthday points, free movie tickets",
+        "Color": "#C0C0C0"
     },
     {
         "Tier": "Luxe Gold",
         "Eligibility": 1000000,
         "Points": 2,
         "Lounge Access": "6 international visits/year",
-        "Benefits": "Priority customer service with dedicated RM",
+        "Benefits": "Dedicated RM, golf access",
+        "Color": "#FFD700"
     },
     {
         "Tier": "Luxe Platinum",
         "Eligibility": 2000000,
         "Points": 3,
         "Lounge Access": "Unlimited global",
-        "Benefits": "Personalized concierge, luxury brand invites",
+        "Benefits": "Concierge, luxury brand access",
+        "Color": "#E5E4E2"
     },
     {
         "Tier": "Luxe Black",
         "Eligibility": "Invitation only",
         "Points": 4,
-        "Lounge Access": "Unlimited global with VIP",
-        "Benefits": "Exclusive events, luxury travel packages",
+        "Lounge Access": "Unlimited VIP global",
+        "Benefits": "Private events, luxury travel",
+        "Color": "#000000"
     }
 ]
 
 df = pd.DataFrame(tiers)
 
 # Streamlit configuration
-st.set_page_config(layout="wide", page_title="RuPay Luxe Rewards", page_icon="💎")
+st.set_page_config(layout="wide", page_title="RuPay Luxe Rewards", page_icon="💎", initial_sidebar_state="collapsed")
 
-# Simplified styling
+# Enhanced styling with reduced top spacing
 st.markdown("""
     <style>
-        .main-container {
-            padding: 0rem 1rem;
-        }
+        /* Remove top padding and header spacing */
         .stApp {
             background-color: white;
+            margin-top: -80px;
+        }
+        .main-container {
+            padding: 0 1rem;
         }
         section[data-testid="stSidebar"] {
             display: none;
         }
+        /* Header styling */
+        .title-container {
+            background-color: white;
+            padding: 15px 0 5px 0;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #1a237e;
+        }
         .title {
             color: #1a237e;
             text-align: center;
-            font-size: 24px;
-            padding: 10px 0;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #1a237e;
+            font-size: 26px;
+            font-weight: 600;
+            margin: 0;
         }
+        /* Section styling */
         .section-box {
-            border: 1px solid #ddd;
-            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
             padding: 15px;
             margin-bottom: 15px;
             background-color: white;
             height: 100%;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
         .section-title {
             color: #1a237e;
             font-size: 18px;
-            margin-bottom: 10px;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 5px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #f0f0f0;
         }
+        /* Card tier styling */
+        .card-tier {
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 12px;
+            margin: 8px 0;
+            background: linear-gradient(to right, #fff, #fafafa);
+            transition: transform 0.2s;
+        }
+        .card-tier:hover {
+            transform: translateX(5px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .card-name {
+            font-weight: 600;
+            color: #1a237e;
+            margin-bottom: 5px;
+        }
+        /* Form elements styling */
+        .stRadio > label {
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .stSelectbox > label {
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .stNumberInput > label {
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .stSlider > label {
+            font-size: 14px;
+            font-weight: 500;
+        }
+        /* Benefits list styling */
         .benefit-list {
             list-style-type: none;
             padding-left: 0;
             margin: 5px 0;
         }
         .benefit-item {
-            margin: 5px 0;
+            margin: 6px 0;
             font-size: 14px;
+            display: flex;
+            align-items: center;
         }
-        .card-tier {
-            border: 1px solid #eee;
-            border-radius: 5px;
-            padding: 8px;
-            margin: 5px 0;
-            background-color: #f8f9fa;
+        .benefit-icon {
+            margin-right: 8px;
+            color: #1a237e;
         }
+        /* Footer styling */
         .footer {
             text-align: center;
             color: #666;
             font-size: 12px;
             padding: 10px;
             border-top: 1px solid #eee;
+            margin-top: 10px;
         }
+        /* Hide Streamlit branding */
+        #MainMenu {visibility: hidden;}
+        footer {visibility: hidden;}
+        /* Eligibility indicator */
+        .eligibility-status {
+            padding: 8px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .eligible {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            border: 1px solid #a5d6a7;
+        }
+        .not-eligible {
+            background-color: #fff3e0;
+            color: #e65100;
+            border: 1px solid #ffcc80;
+        }
+        /* Remove extra padding from Streamlit elements */
         div[data-testid="stVerticalBlock"] > div {
             padding-top: 0;
         }
-        div[class*="stMarkdown"] p {
-            font-size: 14px;
-            margin: 0;
-            padding: 2px 0;
-        }
-        .stRadio > label {
-            font-size: 14px;
-        }
-        .stSelectbox > label {
-            font-size: 14px;
-        }
-        .stNumberInput > label {
-            font-size: 14px;
-        }
-        .stSlider > label {
-            font-size: 14px;
+        .stRadio > div[role="radiogroup"] {
+            padding-top: 0;
         }
     </style>
 """, unsafe_allow_html=True)
 
-# Title
-st.markdown('<h1 class="title">💎 RuPay Luxe Rewards Program</h1>', unsafe_allow_html=True)
+# Title with reduced top spacing
+st.markdown('<div class="title-container"><h1 class="title">💎 RuPay Luxe Rewards Program</h1></div>', unsafe_allow_html=True)
 
 # Create three columns for layout
 col1, col2, col3 = st.columns([1, 1.2, 1])
@@ -147,27 +207,54 @@ with col2:
 
     def calculate_eligibility(spending, score, income):
         eligible_cards = []
+        min_income_ratio = 0.3  # Minimum income to spending ratio
+        
         for tier in tiers:
             eligibility = tier["Eligibility"]
-            if isinstance(eligibility, str):
+            if isinstance(eligibility, str):  # Skip invitation-only cards
                 continue
-            if spending >= eligibility and score >= 650 and income >= eligibility * 0.3:
+                
+            # Enhanced eligibility criteria
+            meets_spending = spending >= eligibility
+            meets_credit = score >= 650
+            meets_income = income >= eligibility * min_income_ratio
+            
+            if meets_spending and meets_credit and meets_income:
                 eligible_cards.append(tier)
+        
         return eligible_cards
 
     eligible_cards = calculate_eligibility(annual_spending, cibil_score, annual_income)
 
     if eligible_cards:
+        st.markdown("""
+            <div class="eligibility-status eligible">
+                ✨ Congratulations! You qualify for the following cards:
+            </div>
+        """, unsafe_allow_html=True)
+        
         for card in eligible_cards:
             st.markdown(f"""
-                <div class="card-tier">
-                    <b>{card["Tier"]}</b><br>
-                    Points: {card["Points"]}x • {card["Lounge Access"]}<br>
-                    {card["Benefits"]}
+                <div class="card-tier" style="border-left: 4px solid {card['Color']}">
+                    <div class="card-name">{card['Tier']}</div>
+                    <div style="font-size: 14px;">
+                        🎯 {card['Points']}x Points on Purchases<br>
+                        ✈️ {card['Lounge Access']}<br>
+                        🎁 {card['Benefits']}
+                    </div>
                 </div>
             """, unsafe_allow_html=True)
     else:
-        st.warning("No cards available for current profile")
+        st.markdown("""
+            <div class="eligibility-status not-eligible">
+                ℹ️ Currently, no cards match your profile. Consider:
+                <ul style="margin: 5px 0; padding-left: 20px;">
+                    <li>Higher annual spending</li>
+                    <li>Improved CIBIL score</li>
+                    <li>Increased annual income</li>
+                </ul>
+            </div>
+        """, unsafe_allow_html=True)
     st.markdown('</div>', unsafe_allow_html=True)
 
 # Column 3: Program Details
@@ -176,26 +263,28 @@ with col3:
     st.markdown('<div class="section-title">📌 Program Details</div>', unsafe_allow_html=True)
     
     st.markdown("""
-        <b>🎯 Core Benefits</b>
-        <ul class="benefit-list">
-            <li class="benefit-item">• Personalized Rewards</li>
-            <li class="benefit-item">• Exclusive Access</li>
-            <li class="benefit-item">• High Reward Rates</li>
-        </ul>
-        
-        <b>🚀 Accelerated Rewards</b>
-        <ul class="benefit-list">
-            <li class="benefit-item">• 5x points - Luxury Retail</li>
-            <li class="benefit-item">• 3x points - Fine Dining</li>
-            <li class="benefit-item">• 4x points - Travel</li>
-        </ul>
-        
-        <b>🎁 Redemption Options</b>
-        <ul class="benefit-list">
-            <li class="benefit-item">• Luxury Merchandise</li>
-            <li class="benefit-item">• Travel Benefits</li>
-            <li class="benefit-item">• Experiential Rewards</li>
-        </ul>
+        <div style="font-size: 14px;">
+            <b style="color: #1a237e;">🎯 Core Benefits</b>
+            <ul class="benefit-list">
+                <li class="benefit-item">💫 Personalized Rewards</li>
+                <li class="benefit-item">🎭 Exclusive Access</li>
+                <li class="benefit-item">⭐ High Reward Rates</li>
+            </ul>
+            
+            <b style="color: #1a237e;">🚀 Accelerated Rewards</b>
+            <ul class="benefit-list">
+                <li class="benefit-item">🛍️ 5x points - Luxury Retail</li>
+                <li class="benefit-item">🍽️ 3x points - Fine Dining</li>
+                <li class="benefit-item">✈️ 4x points - Travel</li>
+            </ul>
+            
+            <b style="color: #1a237e;">🎁 Redemption Options</b>
+            <ul class="benefit-list">
+                <li class="benefit-item">🎀 Luxury Merchandise</li>
+                <li class="benefit-item">🌟 Travel Benefits</li>
+                <li class="benefit-item">🎪 Experiential Rewards</li>
+            </ul>
+        </div>
     """, unsafe_allow_html=True)
     st.markdown('</div>', unsafe_allow_html=True)
 
