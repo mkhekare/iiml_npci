@@ -305,7 +305,7 @@ with col3:
             <div class="benefit-item">🛍️ 5x points - Luxury Retail</div>
             <div class="benefit-item">🍽️ 3x points - Fine Dining</div>
             <div class="benefit-item">✈️ 4x points - Travel</div>
-        </div>
+    
 
         <div class="section-title">🎁 Redemption Options</div>
         <div class="benefit-list">
