@@ -273,7 +273,7 @@ with col3:
 """, unsafe_allow_html=True)
 
 # Fix styling and structure
-st.markdown("""
+    st.markdown("""
     <style>
         .box-container {
             border: 2px solid #ddd;
