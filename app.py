@@ -277,6 +277,7 @@ with col3:
         .benefit-list {
             list-style-type: none;
             padding-left: 0;
+            margin: 0;
         }
         .benefit-item {
             font-size: 18px;
@@ -290,24 +291,31 @@ with col3:
             box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
             text-align: center; /* Center align text */
         }
+        .section-title {
+            font-size: 20px;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
     </style>
 
     <div class="box-container">
-        <b>🚀 Accelerated Rewards</b><br>
-        <ul class="benefit-list">
-            <li class="benefit-item">🛍️ 5x points - Luxury Retail</li>
-            <li class="benefit-item">🍽️ 3x points - Fine Dining</li>
-            <li class="benefit-item">✈️ 4x points - Travel</li>
-        </ul>
+        <div class="section-title">🚀 Accelerated Rewards</div>
+        <div class="benefit-list">
+            <div class="benefit-item">🛍️ 5x points - Luxury Retail</div>
+            <div class="benefit-item">🍽️ 3x points - Fine Dining</div>
+            <div class="benefit-item">✈️ 4x points - Travel</div>
+        </div>
 
-        <b>🎁 Redemption Options</b><br>
-        <ul class="benefit-list">
-            <li class="benefit-item">🎀 Luxury Merchandise</li>
-            <li class="benefit-item">🌟 Travel Benefits</li>
-            <li class="benefit-item">🎪 Experiential Rewards</li>
-        </ul>
+        <div class="section-title">🎁 Redemption Options</div>
+        <div class="benefit-list">
+            <div class="benefit-item">🎀 Luxury Merchandise</div>
+            <div class="benefit-item">🌟 Travel Benefits</div>
+            <div class="benefit-item">🎪 Experiential Rewards</div>
+        </div>
     </div>
 """, unsafe_allow_html=True)
+
 
 
 
