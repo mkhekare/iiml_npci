@@ -304,8 +304,6 @@ with col3:
             <li class="benefit-item">🛍️ <b>5x points</b> - Luxury Retail</li>
             <li class="benefit-item">🍽️ <b>3x points</b> - Fine Dining</li>
             <li class="benefit-item">✈️ <b>4x points</b> - Travel</li>
-        </ul>
-
         <div class="title">🎁 Redemption Options</div>
         <ul class="benefit-list">
             <li class="benefit-item">🎀 Luxury Merchandise</li>
