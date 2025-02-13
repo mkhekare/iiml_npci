@@ -16,8 +16,8 @@ df = pd.DataFrame(tiers)
 st.markdown("""
     <style>
         body {
-            background-color: #121212;
-            color: #ffffff;
+            background-color: #F5F5F5; /* Light background for a fresh look */
+            color: #333333; /* Dark text for better readability */
             font-family: 'Arial', sans-serif;
         }
         .stApp {
@@ -25,19 +25,28 @@ st.markdown("""
             margin: auto;
             padding: 2rem;
             border-radius: 12px;
-            background: linear-gradient(145deg, #1C1C1C, #2D2D2D);
+            background: linear-gradient(145deg, #EAEAEA, #D1D1D1); /* Softer gradient */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
         }
         .content-box {
-            background-color: #262626;
+            background-color: #FFFFFF; /* White background for content boxes */
             padding: 1.5rem;
             border-radius: 12px;
-            color: #ffffff;
+            color: #333333; /* Dark text for content */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow for content boxes */
         }
         .sidebar .css-1aumxhk, .sidebar .css-18e3th9 {
-            color: #ffffff !important;
+            color: #333333 !important; /* Darker text in the sidebar */
+        }
+        h1, h2, h3 {
+            color: #444444; /* Slightly darker headers */
+        }
+        p {
+            line-height: 1.6; /* Improved readability */
         }
     </style>
 """, unsafe_allow_html=True)
+
 
 st.title("💎 RuPay Luxe Rewards Program")
 st.subheader("Experience luxury, exclusivity, and unparalleled rewards.")
