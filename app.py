@@ -272,7 +272,9 @@ with col3:
     </div>
 """, unsafe_allow_html=True)
     
-    st.markdown("""
+    import streamlit as st
+
+st.markdown("""
     <style>
         .benefit-list {
             list-style-type: none;
@@ -315,6 +317,7 @@ with col3:
         </div>
     </div>
 """, unsafe_allow_html=True)
+
 
 
 
