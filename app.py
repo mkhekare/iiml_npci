@@ -288,18 +288,19 @@ with col3:
             border-radius: 10px;
             background-color: #f9f9f9;
             box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+            text-align: center; /* Center align text */
         }
     </style>
 
     <div class="box-container">
-        <b>🚀 Accelerated Rewards</b>
+        <b>🚀 Accelerated Rewards</b><br>
         <ul class="benefit-list">
             <li class="benefit-item">🛍️ 5x points - Luxury Retail</li>
             <li class="benefit-item">🍽️ 3x points - Fine Dining</li>
             <li class="benefit-item">✈️ 4x points - Travel</li>
         </ul>
 
-        <b>🎁 Redemption Options</b>
+        <b>🎁 Redemption Options</b><br>
         <ul class="benefit-list">
             <li class="benefit-item">🎀 Luxury Merchandise</li>
             <li class="benefit-item">🌟 Travel Benefits</li>
@@ -307,6 +308,7 @@ with col3:
         </ul>
     </div>
 """, unsafe_allow_html=True)
+
 
 # Footer
 st.markdown(f"""
