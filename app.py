@@ -12,37 +12,55 @@ tiers = [
 
 df = pd.DataFrame(tiers)
 
-# Streamlit App Header
+# Streamlit App Styling
 st.markdown("""
     <style>
         body {
-            background-color: #F5F5F5; /* Light background for a fresh look */
-            color: #333333; /* Dark text for better readability */
+            background-color: #121212;
+            color: #ffffff;
             font-family: 'Arial', sans-serif;
         }
         .stApp {
-            max-width: 1100px;
+            max-width: 1300px;
             margin: auto;
             padding: 2rem;
             border-radius: 12px;
-            background: linear-gradient(145deg, #EAEAEA, #D1D1D1); /* Softer gradient */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+            background: linear-gradient(145deg, #1C1C1C, #2D2D2D);
         }
         .content-box {
-            background-color: #FFFFFF; /* White background for content boxes */
-            padding: 1.5rem;
+            background-color: #333333;
+            padding: 1.8rem;
             border-radius: 12px;
-            color: #000000; /* Changed to black text for better visibility */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow for content boxes */
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+            color: #ffffff;
+            margin-bottom: 25px;
         }
         .sidebar .css-1aumxhk, .sidebar .css-18e3th9 {
-            color: #333333 !important; /* Darker text in the sidebar */
+            color: #ffffff !important;
         }
-        h1, h2, h3 {
-            color: #444444; /* Slightly darker headers */
+        h1 {
+            font-size: 36px;
+            color: #FFD700;
         }
-        p {
-            line-height: 1.6; /* Improved readability */
+        h2 {
+            font-size: 28px;
+            color: #FFA500;
+        }
+        h3 {
+            font-size: 24px;
+            color: #FF8C00;
+        }
+        p, li {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #CCCCCC;
+        }
+        .success-box {
+            background-color: #004d00;
+            padding: 12px;
+            border-radius: 6px;
+            color: white;
+            font-size: 18px;
         }
     </style>
 """, unsafe_allow_html=True)
@@ -51,7 +69,7 @@ st.title("💎 RuPay Luxe Rewards Program")
 st.subheader("Experience luxury, exclusivity, and unparalleled rewards.")
 
 # Layouting Sections
-st.markdown("### User Profile")
+st.markdown("### 🧑‍💼 User Profile")
 st.markdown("<div class='content-box'>", unsafe_allow_html=True)
 st.sidebar.title("User Profile")
 st.sidebar.subheader("Tell us about yourself")
@@ -73,7 +91,7 @@ def filter_cards(annual_spending, cibil_score):
 eligible_cards = filter_cards(annual_spending, cibil_score)
 
 if not eligible_cards.empty:
-    st.success("✅ Based on your profile, you are eligible for the following card(s):")
+    st.markdown("<div class='success-box'>✅ Based on your profile, you are eligible for the following card(s):</div>", unsafe_allow_html=True)
     st.table(eligible_cards.drop(columns=["Eligibility"]))
 else:
     st.warning("⚠️ No cards available for your spending level or credit profile.")
