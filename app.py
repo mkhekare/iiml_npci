@@ -181,8 +181,8 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Display the local image above the header
-st.image("head.png", use_column_width=True)
+# Display the local image above the header using the new parameter
+st.image("head.png", use_container_width=True)
 
 # Title with reduced top spacing
 st.markdown('<div class="title-container"><h1 class="title">💎 RuPay Luxe Rewards Program</h1></div>', unsafe_allow_html=True)
