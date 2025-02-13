@@ -124,6 +124,7 @@ st.markdown("""
             font-size: 14px;
             font-weight: 500;
         }
+        
         /* Benefits list styling */
         .benefit-list {
             list-style-type: none;
@@ -257,28 +258,27 @@ with col2:
         """, unsafe_allow_html=True)
     st.markdown('</div>', unsafe_allow_html=True)
 
-# Column 3: Program Details
 with col3:
     st.markdown('<div class="section-box">', unsafe_allow_html=True)
     st.markdown('<div class="section-title">📌 Program Details</div>', unsafe_allow_html=True)
     
     st.markdown("""
         <div style="font-size: 14px;">
-            <b style="color: #1a237e;">🎯 Core Benefits</b>
+            <b>🎯 Core Benefits</b>
             <ul class="benefit-list">
                 <li class="benefit-item">💫 Personalized Rewards</li>
                 <li class="benefit-item">🎭 Exclusive Access</li>
                 <li class="benefit-item">⭐ High Reward Rates</li>
             </ul>
             
-            <b style="color: #1a237e;">🚀 Accelerated Rewards</b>
+            <b>🚀 Accelerated Rewards</b>
             <ul class="benefit-list">
                 <li class="benefit-item">🛍️ 5x points - Luxury Retail</li>
                 <li class="benefit-item">🍽️ 3x points - Fine Dining</li>
                 <li class="benefit-item">✈️ 4x points - Travel</li>
             </ul>
             
-            <b style="color: #1a237e;">🎁 Redemption Options</b>
+            <b>🎁 Redemption Options</b>
             <ul class="benefit-list">
                 <li class="benefit-item">🎀 Luxury Merchandise</li>
                 <li class="benefit-item">🌟 Travel Benefits</li>
@@ -287,6 +287,7 @@ with col3:
         </div>
     """, unsafe_allow_html=True)
     st.markdown('</div>', unsafe_allow_html=True)
+
 
 # Footer
 st.markdown(f"""
