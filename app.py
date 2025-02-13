@@ -181,11 +181,27 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Display the local image above the header using the new parameter
-st.image("head.png", use_container_width=True)
+# Custom CSS to remove space and optimize image display
+st.markdown("""
+    <style>
+        .header-image {
+            display: block;
+            margin-top: -20px;  /* Adjust to remove space */
+            margin-bottom: -30px; /* Reduce space between image and title */
+        }
+        .title {
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+        }
+    </style>
+""", unsafe_allow_html=True)
 
-# Title with reduced top spacing
-st.markdown('<div class="title-container"><h1 class="title">💎 RuPay Luxe Rewards Program</h1></div>', unsafe_allow_html=True)
+# Display the image with optimized spacing
+st.image("head.png", use_container_width=True, output_format="auto")
+
+# Main title (RuPay Luxe Rewards Program)
+st.markdown("<h1 class='title'>💎 RuPay Luxe Rewards Program</h1>", unsafe_allow_html=True)
 
 # Create three columns for layout
 col1, col2, col3 = st.columns([1, 1.2, 1])
